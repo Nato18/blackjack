@@ -23,11 +23,18 @@ html,body{
     width: 500px;
     height: 220px;
 }
-.meme{
+.meme-ganar{
 
     position: relative;
 
+    width: 10px;
+    top: -550px;
+    left: 600px;
+}
+.meme-perder{
+    position: relative;
+
     width: 700px;
-    top: -250px;
-    left: 400px;
+    top: -470px;
+    left: 600px;
 }
