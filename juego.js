@@ -90,7 +90,7 @@ const turnopc = (puntosminimos) =>{
         }else if (puntospc > 21) {
 
             const imgmeme = document.createElement('img');
-            imgmeme.src= `meme/ganar.png`;
+            imgmeme.src= `meme/ganar.jpg`;
             imgmeme.classList.add('imagen-ganar');
             imagen_ganar.append(imgmeme);
         }else{
