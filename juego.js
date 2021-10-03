@@ -11,11 +11,11 @@ const nuevo = document.querySelector("#nuevo-juego");
 
 const divcartasjugador = document.querySelector("#jugador-cartas");
 const divcartaspc = document.querySelector("#Computadora-cartas");
-const imagen_memes = document.querySelector(".meme");
+const imagen_ganar = document.querySelector(".meme-ganar");
+const imagen_perder = document.querySelector(".meme-perder");
 
 const puntos = document.querySelectorAll("small");
 
-addEventListener
 const crearDeck = ()=>{
 
 
@@ -84,21 +84,21 @@ const turnopc = (puntosminimos) =>{
 
             const imgmeme = document.createElement('img');
             imgmeme.src= `meme/perder.jpg`;
-            imgmeme.classList.add('meme');
-            imagen_memes.append(imgmeme);
+            imgmeme.classList.add('imagen-perder');
+            imagen_perder.append(imgmeme);
 
         }else if (puntospc > 21) {
 
             const imgmeme = document.createElement('img');
-            imgmeme.src= `meme/ganar.jpg`;
-            imgmeme.classList.add('meme');
-            imagen_memes.append(imgmeme);
+            imgmeme.src= `meme/ganar.png`;
+            imgmeme.classList.add('imagen-ganar');
+            imagen_ganar.append(imgmeme);
         }else{
            
             const imgmeme = document.createElement('img');
             imgmeme.src= `meme/perder.jpg`;
-            imgmeme.classList.add('meme');
-            imagen_memes.append(imgmeme);
+            imgmeme.classList.add('imagen-perder');
+            imagen_perder.append(imgmeme);
         }
     }, 10);
 }
@@ -124,10 +124,12 @@ pedir.addEventListener('click',function() {
     if (puntosjugador > 21){
         console.warn("Sorry mano, Perdiste wuajaja");
         pedir.disabled = true;
+        parar.disabled = true;
         turnopc(puntosjugador);
     }else if(puntosjugador === 21){
         console.warn("Ganaste pana, 21!");
         pedir.disabled = true;
+        parar.disabled = true;
         turnopc(puntosjugador);
     }
 
@@ -156,8 +158,9 @@ nuevo.addEventListener('click',function(){
 
     divcartasjugador.innerHTML = "";
     divcartaspc.innerHTML = "";
-    imagen_memes.innerHTML = "";
-
+    imagen_perder.innerHTML = "";
+    imagen_ganar.innerHTML = "";
+    
     pedir.disabled = false;
     parar.disabled = false;
 
